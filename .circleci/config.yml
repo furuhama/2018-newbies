@@ -19,6 +19,7 @@ jobs:
           name: change directory to nova
           command: |
             cd nova
+
       # Download and cache dependencies
       - restore_cache:
           keys:
@@ -31,6 +32,7 @@ jobs:
           command: |
             cd nova
             bundle install --jobs=4 --retry=3 --path vendor/bundle
+
       - save_cache:
           paths:
             - ./nova/vendor/bundle
